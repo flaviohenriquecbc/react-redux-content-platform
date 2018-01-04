@@ -1,0 +1,160 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.jsx": "eslint"
+  },
+  "eslintConfig": {
+    "globals": {
+      "_": true,
+      "document": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "extends": [
+      "airbnb"
+    ],
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    },
+    "rules": {
+      "react/forbid-prop-types": [
+        0
+      ],
+      "import/no-absolute-path": [
+        0
+      ],
+      "comma-dangle": [
+        0
+      ],
+      "import/extensions": [
+        0
+      ],
+      "import/no-extraneous-dependencies": [
+        0
+      ],
+      "object-curly-spacing": [
+        0
+      ],
+      "no-underscore-dangle": [
+        0
+      ],
+      "react/jsx-no-bind": [
+        0
+      ],
+      "import/first": [
+        0
+      ],
+      "react/jsx-indent": [
+        "error",
+        4
+      ],
+      "react/jsx-indent-props": [
+        "error",
+        4
+      ],
+      "react/prop-types": [
+        0
+      ],
+      "meteor/audit-argument-checks": [
+        0
+      ],
+      "indent": [
+        "error",
+        4
+      ],
+      "no-param-reassign": [
+        0
+      ],
+      "class-methods-use-this": [
+        0
+      ],
+      "no-else-return": [
+        0
+      ],
+      "no-plusplus": [
+        0
+      ],
+      "react/prefer-stateless-function": [
+        0
+      ],
+      "no-lonely-if": [
+        0
+      ],
+      "meteor/no-session": [
+        0
+      ],
+      "jsx-a11y/no-static-element-interactions": [
+        0
+      ],
+      "arrow-body-style": [
+        0
+      ],
+      "max-len": [
+        0
+      ],
+      "jsx-a11y/label-has-for": [
+        0
+      ],
+      "react/sort-comp": [
+        0
+      ],
+      "react/no-danger": [
+        0
+      ],
+      "prefer-destructuring": [
+        0
+      ],
+      "object-curly-newline": [
+        0
+      ],
+      "padded-blocks": [
+        0
+      ],
+      "react/jsx-filename-extension": [
+        1, 
+        {
+          "extensions": [".js", ".jsx"]
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint": "^3.16.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "lint-staged": "^3.2.6",
+    "pre-commit": "^1.2.2",
+    "react-scripts": "1.0.17"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-icons": "^2.2.5",
+    "react-loading": "^0.1.4",
+    "react-modal": "^2.2.2",
+    "react-redux": "^5.0.5",
+    "react-scripts": "1.0.10",
+    "redux": "^3.7.2"
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
+}
