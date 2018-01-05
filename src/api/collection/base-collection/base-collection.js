@@ -8,13 +8,17 @@ const headers = {
 };
 
 export default class BaseEntityApi {
-    constructor(type) {
-        this.type = type;
+    constructor() {
+        this.type = this.getType();
     }
 
-    static getAll(type) {
-        return fetch(`${REACT_APP_ROOT_BACKEND_URL}/${type}`, { headers })
-            .then(res => res.json());
+    getType() {
+        throw new Error('You forgot the type of the collection');
+    }
+
+    async getAll() {
+        const res = await fetch(`${REACT_APP_ROOT_BACKEND_URL}/${this.type}`, { headers });
+        return res.json();
     }
 
     getById(id) {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import BaseCollection from './../api/collection/base-collection/base-collection';
-import { fetchCategoriesSuccess } from './../../src/api/collection/category/action';
+import CategoryApi from './../api/collection/category/collection';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -11,10 +10,7 @@ class App extends Component {
     // }
 
     componentDidMount() {
-        const { dispatch } = this.props;
-        BaseCollection.getAll('categories').then((categories) => {
-            dispatch(fetchCategoriesSuccess(categories));
-        });
+        CategoryApi.fetchAll(this.props);
     }
 
     render() {
@@ -34,9 +30,9 @@ class App extends Component {
 }
 
 
-function mapStateToProps(a) {
+function mapStateToProps({ categories }) {
     return {
-        ...a
+        ...categories
     };
 }
 
