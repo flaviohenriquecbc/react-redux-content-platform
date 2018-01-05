@@ -6,7 +6,7 @@ class CategoryApi extends BaseCollection {
         return 'categories';
     }
 
-    async fetchAll({ dispatch }) {
+    fetchAll(dispatch) {
         this.getAll().then(categories =>
                 dispatch(fetchCategoriesSuccess(categories)));
     }

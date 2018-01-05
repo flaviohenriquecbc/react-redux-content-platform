@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
-import { fetchCategoriesSuccess } from './category/reducer';
+import { categories } from './category/reducer';
+import { posts } from './post/reducer';
+import { comments } from './comment/reducer';
 
 export default combineReducers({
-    categories: fetchCategoriesSuccess
+    categories,
+    posts,
+    comments
 });

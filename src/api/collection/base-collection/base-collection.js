@@ -16,18 +16,18 @@ export default class BaseEntityApi {
         throw new Error('You forgot the type of the collection');
     }
 
-    async getAll() {
-        const res = await fetch(`${REACT_APP_ROOT_BACKEND_URL}/${this.type}`, { headers });
+    async getAll(params) {
+        const res = await fetch(`${REACT_APP_ROOT_BACKEND_URL}/${params || this.type}`, { headers });
         return res.json();
     }
 
-    getById(id) {
-        const res = fetch(`${REACT_APP_ROOT_BACKEND_URL}/${this.type}/${id}`, { headers });
-        return Promise.all([res, res.json()]);
+    async getById(id) {
+        const res = await fetch(`${REACT_APP_ROOT_BACKEND_URL}/${this.type}/${id}`, { headers });
+        return res.json();
     }
 
-    post(data) {
-        const res = fetch(
+    async post(data) {
+        const res = await fetch(
             `${REACT_APP_ROOT_BACKEND_URL}/${this.type}`,
             {
                 headers,
@@ -35,11 +35,11 @@ export default class BaseEntityApi {
                 body: JSON.stringify(data)
             }
         );
-        return Promise.all([res, res.json()]);
+        return res.json();
     }
 
-    put(id, data) {
-        const res = fetch(
+    async put(id, data) {
+        const res = await fetch(
             `${REACT_APP_ROOT_BACKEND_URL}/${this.type}/${id}`,
             {
                 headers,
@@ -47,17 +47,17 @@ export default class BaseEntityApi {
                 body: JSON.stringify(data)
             }
         );
-        return Promise.all([res, res.json()]);
+        return res.json();
     }
 
-    remove(id) {
-        const res = fetch(
+    async remove(id) {
+        const res = await fetch(
             `${REACT_APP_ROOT_BACKEND_URL}/${this.type}/${id}`,
             {
                 headers,
                 method: 'DELETE'
             }
         );
-        return Promise.all([res, res.json()]);
+        return res.json();
     }
 }
