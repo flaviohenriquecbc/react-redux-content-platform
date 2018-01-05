@@ -16,7 +16,9 @@
   "eslintConfig": {
     "globals": {
       "_": true,
-      "document": true
+      "document": true,
+       "fetch": true,
+       "window": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
@@ -128,6 +130,9 @@
         {
           "extensions": [".js", ".jsx"]
         }
+      ],
+      "import/prefer-default-export": [
+        0
       ]
     }
   },

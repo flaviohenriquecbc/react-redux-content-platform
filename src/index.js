@@ -1,8 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './page/App.jsx';
+// import './index.css'
+import App from './ui/App.jsx';
+// import registerServiceWorker from './registerServiceWorker';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducer from './api/collection/reducer';
+import { Provider } from 'react-redux';
+
+const logger = store => next => (action) => {
+    console.group(action.type);
+    console.info('dispatching', action);
+    const result = next(action);
+    console.log('next state', store.getState());
+    console.groupEnd(action.type);
+    return result;
+};
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+  reducer,
+  composeEnhancers(
+    applyMiddleware(logger)
+  )
+);
 
 ReactDOM.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
+
+// registerServiceWorker();
