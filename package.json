@@ -17,8 +17,8 @@
     "globals": {
       "_": true,
       "document": true,
-       "fetch": true,
-       "window": true
+      "fetch": true,
+      "window": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
@@ -126,9 +126,12 @@
         0
       ],
       "react/jsx-filename-extension": [
-        1, 
+        1,
         {
-          "extensions": [".js", ".jsx"]
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
         }
       ],
       "import/prefer-default-export": [
@@ -150,12 +153,14 @@
     "react-scripts": "1.0.17"
   },
   "dependencies": {
+    "history": "^4.7.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-icons": "^2.2.5",
     "react-loading": "^0.1.4",
     "react-modal": "^2.2.2",
     "react-redux": "^5.0.5",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.0.10",
     "redux": "^3.7.2"
   },
